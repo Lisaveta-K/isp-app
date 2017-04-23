@@ -1,15 +1,15 @@
 <div>
   <div class="row centered">
-    <div class="col col-6">
+    <div class="col col-6" style="position: relative;">
       <h2 ng-click="alert()">SSL pricelist</h2>
       <table *ngIf="pricelist">
         <tbody>
-          <tr *ngFor="let item of pricelist">
-            <td style="position: relative;">
+          <tr *ngFor="let item of pricelist; let i=index">
+            <td>
             <a (mouseover)="this.clickMessage=item.description_ru"
             (mouseleave)="this.clickMessage=null"
-            >{{ item.name }}</a>
-            <div [innerHTML]="clickMessage" class="item__description" style="position:absolute; background-color: #fff;"></div>
+            >{{i}} {{ item.name }}</a>
+            <div *ngIf="this.clickMessage!=0 && item.description_ru===clickMessage" [innerHTML]="clickMessage" class="item__description" style="position:absolute; border: 1px solid grey;"></div>
             </td>
             <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
           </tr>
