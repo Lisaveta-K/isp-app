@@ -1,4 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-.selected {
-	color:red;
-}
+.item__description {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #dbdcdb;
+  -webkit-box-shadow: 5px 10px 10px 5px rgba(142, 154, 164, 0.6);
+          box-shadow: 5px 10px 10px 5px rgba(142, 154, 164, 0.6);
+  padding: 25px;
+  max-width: 50%;
+  z-index: 10; }
+  .item__description:before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 8px;
+    border: solid #dbdcdb;
+    border-width: 1px 0 0 1px;
+    background-color: #fff;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: -4px;
+    left: 15px;
+    z-index: -1; }
