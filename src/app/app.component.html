@@ -1,15 +1,19 @@
 <div>
   <div class="row centered">
     <div class="col col-6">
-      <h2>SSL pricelist</h2>
+      <h2 ng-click="alert()">SSL pricelist</h2>
       <table *ngIf="pricelist">
         <tbody>
           <tr *ngFor="let item of pricelist">
-            <td><a>{{ item.name }}</a></td>
+            <td style="position: relative;">
+            <a (mouseover)="this.clickMessage=item.description_ru"
+            (mouseleave)="this.clickMessage=null"
+            >{{ item.name }}</a>
+            <div [innerHTML]="clickMessage" class="item__description" style="position:absolute; background-color: #fff;"></div>
+            </td>
             <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>
