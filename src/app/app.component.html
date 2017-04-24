@@ -6,10 +6,10 @@
         <tbody>
           <tr *ngFor="let item of pricelist; let i=index">
             <td>
-            <a (mouseover)="this.clickMessage=item.description_ru"
-            (mouseleave)="this.clickMessage=item.description_ru"
-            >{{i}} {{ item.name }}</a>
-            <div *ngIf="this.clickMessage!=0 && item.description_ru===clickMessage" [innerHTML]="clickMessage" class="item__description"></div>
+            <a (mouseover)="this.Message=item.description_ru"
+            (mouseleave)="this.Message=''"
+            >{{ item.name }}</a>
+            <div *ngIf="this.Message!='' && item.description_ru===Message" [innerHTML]="Message" class="item__description"></div>
             </td>
             <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
           </tr>
