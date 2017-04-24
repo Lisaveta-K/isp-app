@@ -1,15 +1,16 @@
 <div>
   <div class="row centered">
-    <div class="col col-6" style="position: relative;">
+    <div class="col col-6">
       <h2>SSL pricelist</h2>
       <table *ngIf="pricelist">
         <tbody>
           <tr *ngFor="let item of pricelist; let i=index">
             <td>
-            <a (mouseover)="this.Message=item.description_ru"
+            <a 
+            (mouseover)="this.Message=item.description_ru; id=item.id"
             (mouseleave)="this.Message=''"
             >{{ item.name }}</a>
-            <div *ngIf="this.Message!='' && item.description_ru===Message" [innerHTML]="Message" class="item__description"></div>
+            <div *ngIf="this.Message!='' && item.id===id" [innerHTML]="Message" class="item__description"></div>
             </td>
             <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
           </tr>

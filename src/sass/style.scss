@@ -1,26 +1,51 @@
 .item {
-	&__description {
-		position:absolute; 
-		background-color: #fff;
-		border: 1px solid #dbdcdb;
-		box-shadow: 5px 10px 10px 5px rgba(142,154,164, 0.6);
-		padding: 25px;
-		max-width: 50%;
-		z-index: 10;
+    &__description {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #dbdcdb;
+        box-shadow: 5px 10px 10px 5px rgba(142, 154, 164, 0.6);
+        padding: 25px;
+        max-width: 100%;
+        z-index: 10;
 
-		&:before {
-			content: '';
-			display: block;
-			width: 12px;
-			height: 8px;
-			border: solid #dbdcdb;
-			border-width: 1px 0 0 1px;
-			background-color: #fff;
-			position: absolute;
-			transform: rotate(45deg);
-			top: -4px;
-			left: 15px;
-			z-index: -1;
-		}
-	}
+        // &--below {
+            &:before {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                border: solid #dbdcdb;
+                border-width: 1px 0 0 1px;
+                background-color: #fff;
+                position: absolute;
+                transform: rotate(45deg);
+                top: -5px;
+                left: 15px;
+                z-index: -1;
+            }
+        // }
+
+        &--above {
+        	top: -100%;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                border: solid #dbdcdb;
+                border-width: 0 1px 1px 0;
+                background-color: #fff;
+                position: absolute;
+                transform: rotate(45deg);
+                bottom: -5px;
+                left: 15px;
+                z-index: -1;
+            }
+        }
+    }
 }
+
+table tr td {
+		position: relative;
+	}
