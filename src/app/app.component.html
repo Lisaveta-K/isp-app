@@ -10,7 +10,8 @@
             (mouseover)="this.Message=item.description_ru; id=item.id"
             (mouseleave)="this.Message=''"
             >{{ item.name }}</a>
-            <div *ngIf="this.Message!='' && item.id===id" [innerHTML]="Message" class="item__description"></div>
+            <div *ngIf="this.Message!='' && item.id===id" [innerHTML]="Message" class="item__description">
+            </div>
             </td>
             <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
           </tr>
